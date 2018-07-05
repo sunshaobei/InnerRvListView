@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent"
+    tools:context=".Main2Activity">
+
+
+    <TextView
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_bg"
+        android:transitionName="edit"
+        android:text="搜索"
+        android:padding="10dp"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<com.sunsh.myapplication.overscroll.NestedOverScrollLayout
+    android:layout_width="0dp"
+    android:id="@+id/over"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/edit"
+    android:layout_height="0dp">
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb"
+        android:id="@+id/recyclerView"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        />
+
+</com.sunsh.myapplication.overscroll.NestedOverScrollLayout>
+
+</android.support.constraint.ConstraintLayout>

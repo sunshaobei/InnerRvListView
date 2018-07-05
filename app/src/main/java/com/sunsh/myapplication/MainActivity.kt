@@ -1,8 +1,12 @@
 package com.sunsh.myapplication
 
-import android.annotation.SuppressLint
+
+import android.app.ActivityOptions
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.app.ActivityOptionsCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -13,9 +17,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
-
-
-import java.util.Random
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = RvAdapter()
+        edit.setOnClickListener {
+            startActivity(Intent(this@MainActivity,Main2Activity::class.java), ActivityOptions.makeSceneTransitionAnimation
+            (this@MainActivity, edit, "edit")
+                    .toBundle());
+        }
     }
 
 
